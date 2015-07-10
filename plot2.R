@@ -19,9 +19,9 @@ data <- subset(data,((start <= timestamp) & (timestamp <= end)))
 
 # Plot the data.
 par(mfcol=c(1,1))
-with(data, hist(active_power,col="red",main="Global Active Power",
-                xlab="Global Active Power (kilowatts)",xaxp=c(0,6,3)))
+with(data, plot(active_power~timestamp,
+                type="l",xlab="",ylab="Global Active Power (kilowatts)"))
 
 # Save to file.
-dev.copy(png,filename="plot1.png",width=480,height=480)
+dev.copy(png,filename="plot2.png",width=480,height=480)
 dev.off()
